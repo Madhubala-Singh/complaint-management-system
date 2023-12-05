@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    h3{
+        color:rgb(207, 83, 30);
+        text-align: center;
+        margin-right: 0 40%;
+        
+        
+    
+        
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+</head>
+<body>
+    <link rel="stylesheet" href="reg.css">
+    <h1>Welcome to the Complaint Management System</h1>
+    <form action="submit_complaint.php" method="post">
+        <label for="name">Name  :</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="email">Email  :</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <label for="complaint">Complaint  :</label>
+        <textarea name="complaint" id="complaint" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Submit Complaint">
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{
+    background-image: url(nature.jpg);
+    width: 100vh;
+    display: inline-block;
+    padding: 80px ;
+    
+    
+}
+p{
+    color:white;
+    size: 40px;
+    text-align:center;
+}
+h1{
+    size: 30px;
+    color: black;
+    font-style: italic;
+}
