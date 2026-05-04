@@ -7,7 +7,7 @@ A modern, professional web application for managing and tracking customer compla
 
 ## 🌐 Live Demo
 
-**[View Live Website](#)** ← Add your deployed URL here
+**[grievance-management-system.netlify.app](#)** 
 
 ## ✨ Features
 
@@ -229,9 +229,9 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👨‍💻 Author
 
 **Your Name**
-- LinkedIn: [Your Profile](#)
-- GitHub: [@yourusername](#)
-- Email: your.email@example.com
+- LinkedIn: [https://www.linkedin.com/in/madhubalasingh38/](#)
+- GitHub: [https://github.com/Madhubala-Singh](#)
+- Email: madhubalasingh699@gmail.com
 
 ## 🙏 Acknowledgments
 
