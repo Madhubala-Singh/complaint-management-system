@@ -1,36 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-    h3{
-        color:rgb(207, 83, 30);
-        text-align: center;
-        margin-right: 0 40%;
-        
-        
-    
-        
-    }
-
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complaint Management System</title>
+    <meta name="description" content="Register your complaint with our easy-to-use complaint management system">
+    <title>Register Complaint | Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <link rel="stylesheet" href="reg.css">
-    <h1>Welcome to the Complaint Management System</h1>
-    <form action="submit_complaint.php" method="post">
-        <label for="name">Name  :</label>
-        <input type="text" name="name" id="name" required><br><br>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>CMS</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html" class="active">Register Complaint</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <label for="email">Email  :</label>
-        <input type="email" name="email" id="email" required><br><br>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-edit"></i> Register Your Complaint</h1>
+            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+        </div>
+    </section>
 
-        <label for="complaint">Complaint  :</label>
-        <textarea name="complaint" id="complaint" rows="4" required></textarea><br><br>
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <!-- Sidebar Info -->
+                <div class="form-info">
+                    <h2><i class="fas fa-lightbulb"></i> How It Works</h2>
+                    <p class="info-intro">Follow these simple steps to register your complaint</p>
+                    
+                    <div class="info-step">
+                        <div class="info-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>1. Fill the Form</h3>
+                            <p>Provide your details and describe your complaint clearly and concisely.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-step">
+                        <div class="info-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>2. Submit</h3>
+                            <p>Your complaint will be registered in our system immediately.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-step">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>3. Track Progress</h3>
+                            <p>Receive updates and track the status of your complaint in real-time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-step">
+                        <div class="info-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>4. Resolution</h3>
+                            <p>Get your issue resolved by our dedicated team of professionals.</p>
+                        </div>
+                    </div>
 
-        <input type="submit" value="Submit Complaint">
-    </form>
+                    <div class="info-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Average response time: <strong>24 hours</strong></p>
+                    </div>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Complaint Registration Form</h2>
+                        <p>Please fill in all required fields marked with *</p>
+                    </div>
+
+                    <form id="complaintForm" class="complaint-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i> Full Name *
+                                </label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class="fas fa-phone"></i> Phone Number *
+                                </label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">
+                                    <i class="fas fa-list"></i> Complaint Category *
+                                </label>
+                                <select id="category" name="category" required>
+                                    <option value="">Select a category</option>
+                                    <option value="product">Product Quality</option>
+                                    <option value="service">Service Issue</option>
+                                    <option value="billing">Billing Problem</option>
+                                    <option value="delivery">Delivery Issue</option>
+                                    <option value="staff">Staff Behavior</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="priority">
+                                    <i class="fas fa-exclamation-circle"></i> Priority Level *
+                                </label>
+                                <select id="priority" name="priority" required>
+                                    <option value="">Select priority</option>
+                                    <option value="low">Low - Can wait a few days</option>
+                                    <option value="medium">Medium - Needs attention soon</option>
+                                    <option value="high">High - Urgent matter</option>
+                                    <option value="critical">Critical - Immediate action required</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="date">
+                                    <i class="fas fa-calendar"></i> Incident Date
+                                </label>
+                                <input type="date" id="date" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-heading"></i> Subject *
+                            </label>
+                            <input type="text" id="subject" name="subject" placeholder="Brief description of your complaint" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complaint">
+                                <i class="fas fa-comment-alt"></i> Complaint Details *
+                            </label>
+                            <textarea id="complaint" name="complaint" rows="6" placeholder="Please describe your complaint in detail. Include any relevant information that will help us understand and resolve your issue..." required></textarea>
+                            <small class="char-count">0 / 1000 characters</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attachment">
+                                <i class="fas fa-paperclip"></i> Attachment (Optional)
+                            </label>
+                            <div class="file-input-wrapper">
+                                <input type="file" id="attachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                                <label for="attachment" class="file-input-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Choose file or drag here</span>
+                                </label>
+                            </div>
+                            <small>Supported formats: JPG, PNG, PDF, DOC (Max 5MB)</small>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="updates">
+                                <span>Send me email updates about my complaint status</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            <i class="fas fa-paper-plane"></i> Submit Complaint
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <p><i class="fas fa-shield-alt"></i> Your information is secure and will be kept confidential</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-clipboard-list"></i> CMS</h3>
+                    <p>Your trusted platform for complaint management and resolution.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="registration.html">Register Complaint</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 180040051234</li>
+                        <li><i class="fas fa-envelope"></i> info@cms.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/madhubalasingh38/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Complaint Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

@@ -1,131 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Complaint Management System</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/half-slider.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Complaint Management System - The easiest way to file and track complaints online">
+    <title>Complaint Management System | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">COMPLAINT MANAGEMENT </a>
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>CMS</span>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="http://localhost/Complaint Management System/users/">User Login</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost/Complaint Management System/users/registration.php">User Registration</a>
-                    </li>
-                    <li>
-                        <a href="http://localhost/Complaint Management System/admin/">admin</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">Register Complaint</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
         </div>
-        <!-- /.container -->
     </nav>
 
-    <!-- Half Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-
-            <div class="item active">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://localhost/cms/img/c2.jpg');"></div>
-                <div class="carousel-caption">
-
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Smart Complaint Management System</h1>
+            <p class="hero-subtitle">Track, manage, and resolve issues efficiently in real-time.</p>
+            <div class="hero-buttons">
+                <a href="registration.html" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Submit Complaint
+                </a>
+                <a href="dashboard.html" class="btn btn-secondary">
+                    <i class="fas fa-chart-line"></i> Track Status
+                </a>
             </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://localhost/cms/img/c10.jpg');"></div>
-                <div class="carousel-caption">
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Platform?</h2>
+            <p class="section-subtitle">A comprehensive solution designed for efficient complaint management and resolution</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Resolution</h3>
+                    <p>We provide a streamlined platform to register, track, and resolve complaints efficiently. Our system ensures transparency and faster response times for all users.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is protected with industry-standard encryption and security measures. We maintain complete confidentiality throughout the complaint resolution process.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Monitor your complaint status in real-time with our advanced tracking system. Receive instant notifications and updates at every stage of resolution.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available round the clock to assist you. Get immediate help whenever you need it through multiple communication channels.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Multi-Channel Access</h3>
+                    <p>Submit complaints through various channels including web, email, and phone. Our platform seamlessly integrates all communication methods for your convenience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Comprehensive Reports</h3>
+                    <p>Access detailed analytics and comprehensive reports on all your complaints. Make data-driven decisions with our advanced reporting capabilities.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
-    </header>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="com"><h1><b>WELCOME TO COMPLAINT MANAGEMENT SYSTEM</b></h1>
-                <p><h2>The Easiest Way To Complain Online </h2><br> <b><i>Tired off getting ripped off? Fight back and file a customer complaint now.Sign Up Today And You Can Leave Complaints on various topics/company.</b> </i></p></div>
-
-            </div>
-        </div>
-<style>.com{text-align: center;} </style>
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2020 CMS</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Complaints Resolved</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
                 </div>
             </div>
-            <!-- /.row -->
-        </footer>
-        <style> .col-lg-12{text-align: center; border: 1px solid black;}</style>
+        </div>
+    </section>
 
-    </div>
-    <!-- /.container -->
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of satisfied users who have successfully resolved their complaints through our platform</p>
+            <a href="registration.html" class="btn btn-light">Register Your Complaint Now</a>
+        </div>
+    </section>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-clipboard-list"></i> CMS</h3>
+                    <p>Your trusted platform for complaint management and resolution.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="registration.html">Register Complaint</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 180040051234</li>
+                        <li><i class="fas fa-envelope"></i> info@cms.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/madhubalasingh38/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Complaint Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
-
 </html>

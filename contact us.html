@@ -3,37 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contact us</title>
-    <style>
-        h3{
-            color:rgb(23, 9, 3);
-            width: 100%;
-       margin:auto;
-       text-align: center; 
-       padding-top: 30px;
-            
-        
-            
-        }
-
-    </style>
+    <meta name="description" content="Contact our Complaint Management System team for support and inquiries">
+    <title>Contact Us | Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <link rel="stylesheet" href="img.css">
-   <h3>Name : Karthik Vabbalareddy</h3>
-    <h3>Contact Number : 8333971372</h3>
-    <h3>Designation : Chairman</h3>
-    <h3>Name : Madhubala singh</h3>
-    <h3>Contact Number : 6200776771</h3>
-    <h3>Designation : Director</h3>
-    <h3><Address>Address: Lovely Professional University, 
-        phagwara,
-         punjab - 144402
-    <h3>contact us for further information</h3>
-    <h3>Telephone number : 180040051234</h3>    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>CMS</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">Register Complaint</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact us.html" class="active">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    </Address>
-</h3>
-    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-phone-alt"></i> Contact Us</h1>
+            <p>Get in touch with our team for any inquiries or support</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p class="contact-intro">Have questions or need assistance? Our team is here to help you. Reach out to us through any of the following channels.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>Lovely Professional University<br>Phagwara, Punjab - 144402<br>India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p><strong>Toll Free:</strong> 180040051234<br>Available 24/7 for your convenience</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p><strong>General:</strong> info@cms.com<br><strong>Support:</strong> support@cms.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p><strong>Mon - Fri:</strong> 9:00 AM - 6:00 PM<br><strong>Sat:</strong> 10:00 AM - 4:00 PM<br><strong>Sun:</strong> Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links-large">
+                            <a href="https://www.linkedin.com/in/madhubalasingh38/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form and we'll get back to you within 24 hours</p>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">
+                                <i class="fas fa-user"></i> Your Name *
+                            </label>
+                            <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">
+                                <i class="fas fa-envelope"></i> Email Address *
+                            </label>
+                            <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="+1 (555) 000-0000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">
+                                <i class="fas fa-heading"></i> Subject *
+                            </label>
+                            <input type="text" id="contactSubject" name="subject" placeholder="What is this regarding?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">
+                                <i class="fas fa-comment-alt"></i> Message *
+                            </label>
+                            <textarea id="contactMessage" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <div class="form-footer">
+                        <p><i class="fas fa-shield-alt"></i> We respect your privacy and will never share your information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Our Leadership Team</h2>
+            <p class="section-subtitle">Meet the dedicated professionals behind our success</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Karthik Vabbalareddy</h3>
+                        <p class="team-role">Chairman</p>
+                        <div class="team-contact">
+                            <p><i class="fas fa-phone"></i> 8333971372</p>
+                            <p><i class="fas fa-envelope"></i> karthik@cms.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-photo">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Madhubala Singh</h3>
+                        <p class="team-role">Director</p>
+                        <div class="team-contact">
+                            <p><i class="fas fa-phone"></i> 6200776771</p>
+                            <p><i class="fas fa-envelope"></i> madhubala@cms.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Us on Map</h2>
+            <p class="section-subtitle">Visit our office for in-person assistance</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.234567890123!2d75.7!3d31.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDE1JzAwLjAiTiA3NcKwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Quick answers to common questions</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> How long does it take to get a response?</h3>
+                    <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Can I track my complaint status?</h3>
+                    <p>Yes! You'll receive a tracking number and regular email updates about your complaint.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Is my information secure?</h3>
+                    <p>Absolutely. We use industry-standard encryption to protect all your personal data.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> What if I need urgent assistance?</h3>
+                    <p>For urgent matters, please call our 24/7 hotline at 180040051234.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-clipboard-list"></i> CMS</h3>
+                    <p>Your trusted platform for complaint management and resolution.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="registration.html">Register Complaint</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 180040051234</li>
+                        <li><i class="fas fa-envelope"></i> info@cms.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/madhubalasingh38/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Complaint Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track and manage your complaints in real-time">
+    <title>Dashboard | Complaint Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>CMS</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">Register Complaint</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+            
+            <!-- Dashboard Header Actions -->
+            <div class="dashboard-header-actions">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search complaints..." id="searchInput">
+                </div>
+                <button class="icon-btn" onclick="showNotification('No new notifications', 'info')">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile" id="userProfileSection">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=4F46E5&color=fff" alt="User" id="userAvatar">
+                    <span id="userName">John Doe</span>
+                </div>
+                <button class="btn btn-secondary" onclick="logout()" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-title">
+                <h1><i class="fas fa-chart-line"></i> Complaint Dashboard</h1>
+                <p>Track and manage all your complaints in one place</p>
+            </div>
+            <div class="dashboard-actions">
+                <button class="btn btn-primary" onclick="window.location.href='registration.html'">
+                    <i class="fas fa-plus"></i> New Complaint
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Stats -->
+    <section class="dashboard-stats">
+        <div class="container">
+            <div class="stats-grid-dashboard">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4F46E5, #8B5CF6);">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Complaints</h3>
+                        <p class="stat-number">24</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #F59E0B, #F97316);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending</h3>
+                        <p class="stat-number">8</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #06B6D4, #0EA5E9);">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>In Progress</h3>
+                        <p class="stat-number">10</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10B981, #059669);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Resolved</h3>
+                        <p class="stat-number">6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaints Table -->
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-list"></i> Recent Complaints</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterStatus('all')" data-filter="all">All</button>
+                        <button class="filter-btn" onclick="filterStatus('pending')" data-filter="pending">Pending</button>
+                        <button class="filter-btn" onclick="filterStatus('progress')" data-filter="progress">In Progress</button>
+                        <button class="filter-btn" onclick="filterStatus('resolved')" data-filter="resolved">Resolved</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="complaints-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                                <th>Category</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Assigned To</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="complaintsTableBody">
+                            <tr data-status="progress">
+                                <td><strong>#CMP-001</strong></td>
+                                <td>Product Quality Issue</td>
+                                <td><span class="badge badge-blue">Product</span></td>
+                                <td><span class="badge badge-red">High</span></td>
+                                <td><span class="status-badge status-progress">In Progress</span></td>
+                                <td>May 4, 2026 10:30 AM</td>
+                                <td>
+                                    <div class="assigned-user">
+                                        <img src="https://ui-avatars.com/api/?name=John+Smith&background=4F46E5&color=fff" alt="John Smith">
+                                        <span>John Smith</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn-action btn-view" onclick="viewComplaint('CMP-001')" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-status="pending">
+                                <td><strong>#CMP-002</strong></td>
+                                <td>Billing Discrepancy</td>
+                                <td><span class="badge badge-green">Billing</span></td>
+                                <td><span class="badge badge-orange">Medium</span></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>May 3, 2026 3:45 PM</td>
+                                <td>
+                                    <div class="assigned-user">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=06B6D4&color=fff" alt="Sarah Johnson">
+                                        <span>Sarah Johnson</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn-action btn-view" onclick="viewComplaint('CMP-002')" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-status="resolved">
+                                <td><strong>#CMP-003</strong></td>
+                                <td>Delivery Delay</td>
+                                <td><span class="badge badge-purple">Delivery</span></td>
+                                <td><span class="badge badge-yellow">Low</span></td>
+                                <td><span class="status-badge status-resolved">Resolved</span></td>
+                                <td>May 2, 2026 9:00 AM</td>
+                                <td>
+                                    <div class="assigned-user">
+                                        <img src="https://ui-avatars.com/api/?name=Mike+Davis&background=8B5CF6&color=fff" alt="Mike Davis">
+                                        <span>Mike Davis</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn-action btn-view" onclick="viewComplaint('CMP-003')" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-status="progress">
+                                <td><strong>#CMP-004</strong></td>
+                                <td>Technical Support Request</td>
+                                <td><span class="badge badge-blue">Technical</span></td>
+                                <td><span class="badge badge-red">High</span></td>
+                                <td><span class="status-badge status-progress">In Progress</span></td>
+                                <td>May 1, 2026 1:20 PM</td>
+                                <td>
+                                    <div class="assigned-user">
+                                        <img src="https://ui-avatars.com/api/?name=Tech+Team&background=10B981&color=fff" alt="Tech Team">
+                                        <span>Tech Team</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn-action btn-view" onclick="viewComplaint('CMP-004')" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr data-status="pending">
+                                <td><strong>#CMP-005</strong></td>
+                                <td>Staff Behavior Complaint</td>
+                                <td><span class="badge badge-red">Staff</span></td>
+                                <td><span class="badge badge-orange">Medium</span></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td>Apr 30, 2026 4:30 PM</td>
+                                <td>
+                                    <div class="assigned-user">
+                                        <img src="https://ui-avatars.com/api/?name=HR+Dept&background=F59E0B&color=fff" alt="HR Dept">
+                                        <span>HR Dept</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn-action btn-view" onclick="viewComplaint('CMP-005')" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Details Modal -->
+    <div id="complaintModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Complaint Details</h2>
+                <button class="modal-close" onclick="closeComplaintModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeComplaintModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-clipboard-list"></i> CMS</h3>
+                    <p>Your trusted platform for complaint management and resolution.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="registration.html">Register Complaint</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 180040051234</li>
+                        <li><i class="fas fa-envelope"></i> info@cms.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Punjab, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/madhubalasingh38/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Complaint Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
